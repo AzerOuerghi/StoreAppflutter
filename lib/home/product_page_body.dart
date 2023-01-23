@@ -43,6 +43,10 @@ class _ProductPageBodyState extends State<ProductPageBody> {
                 borderRadius: BorderRadius.circular(5.0)),
           ),
         ),
+        const SizedBox(
+          height: 10,
+        ),
+        secondSection(),
       ],
     );
   }
@@ -100,7 +104,6 @@ Widget _buildPageItem(int index) {
           ),
         ),
       ),
-      secondSection(),
     ],
   );
 }

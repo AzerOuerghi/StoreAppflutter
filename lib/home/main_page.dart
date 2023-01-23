@@ -7,6 +7,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
 
+import 'SecondSection.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -60,7 +62,7 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
           ),
-          ProductPageBody()
+          ProductPageBody(),
         ],
       ),
     );

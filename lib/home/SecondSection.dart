@@ -1,3 +1,4 @@
+import 'package:ecommerce/Color.dart';
 import 'package:ecommerce/widget/big_text.dart';
 import 'package:ecommerce/widget/small_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,16 +23,30 @@ class _secondSectionState extends State<secondSection> {
           SizedBox(
             height: 20,
           ),
-          ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Container(
-                child: Row(children: [
-                  Image(image: AssetImage('images/exhaust-.jpg')),
-                  Text('azer')
-                ]),
-              );
-            },
+          Container(
+            height: 100,
+            width: 1000,
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.all(5),
+                  color: AppColor.iconColor1,
+                  child: Row(children: [
+                    Image(
+                      image: AssetImage('images/exhaust-.jpg'),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        BigText(text: 'test'),
+                        SmallText(text: 'text'),
+                      ],
+                    )
+                  ]),
+                );
+              },
+            ),
           )
         ],
       ),
