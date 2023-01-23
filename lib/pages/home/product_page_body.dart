@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-import '../dimentions.dart';
-import '../widget/big_text.dart';
-import '../widget/small_text.dart';
+import '../../dimentions.dart';
+import '../../widget/big_text.dart';
+import '../../widget/small_text.dart';
 import 'SecondSection.dart';
 
 class ProductPageBody extends StatefulWidget {

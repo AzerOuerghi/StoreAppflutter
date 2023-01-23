@@ -1,5 +1,5 @@
 import 'package:ecommerce/Color.dart';
-import 'package:ecommerce/home/product_page_body.dart';
+import 'package:ecommerce/pages/home/product_page_body.dart';
 import 'package:ecommerce/widget/big_text.dart';
 import 'package:ecommerce/widget/small_text.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +62,7 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
           ),
-          ProductPageBody(),
+           Expanded(child: SingleChildScrollView(child: ProductPageBody())),
         ],
       ),
     );
