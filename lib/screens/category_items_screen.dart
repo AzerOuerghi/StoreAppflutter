@@ -50,7 +50,7 @@ class CategoryItemsScreen extends StatelessWidget {
             horizontal: 25,
           ),
           child: AppText(
-            text: "Beverages",
+            text: "PNEUS ET JANTES",
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),

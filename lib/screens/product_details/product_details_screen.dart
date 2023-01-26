@@ -4,6 +4,7 @@ import 'package:grocery_app/common_widgets/app_text.dart';
 import 'package:grocery_app/models/product_item.dart';
 import 'package:grocery_app/widgets/item_counter_widget.dart';
 
+import '../filter_screen.dart';
 import 'favourite_toggle_icon_widget.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -22,73 +23,120 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children: [
-              getImageHeaderWidget(),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Column(
-                    children: [
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        title: Text(
-                          widget.groceryItem.name,
-                          style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold),
-                        ),
-                        subtitle: AppText(
-                          text: widget.groceryItem.description,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff7C7C7C),
-                        ),
-                        trailing: FavoriteToggleIcon(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Container(
+            padding: EdgeInsets.only(left: 25),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            ),
+          ),
+        ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FilterScreen()),
+              );
+            },
+            child: Container(
+              padding: EdgeInsets.only(right: 25),
+              child: Icon(
+                Icons.sort,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ],
+        title: Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: 25,
+          ),
+          child: AppText(
+            text: "Item",
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            getImageHeaderWidget(),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Column(
+                  children: [
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: Text(
+                        widget.groceryItem.name,
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      Row(
-                        children: [
-                          ItemCounterWidget(
-                            onAmountChanged: (newAmount) {
-                              setState(() {
-                                amount = newAmount;
-                              });
-                            },
-                          ),
-                          Spacer(),
-                          Text(
-                            "\TND${getTotalPrice().toStringAsFixed(2)}",
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
+                      subtitle: AppText(
+                        text: widget.groceryItem.description,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff7C7C7C),
+                      ),
+                      trailing: FavoriteToggleIcon(),
+                    ),
+                    Spacer(),
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            ItemCounterWidget(
+                              onAmountChanged: (newAmount) {
+                                setState(() {
+                                  amount = newAmount;
+                                });
+                              },
                             ),
-                          )
-                        ],
-                      ),
-                      Spacer(),
-                      Divider(thickness: 1),
-                      getProductDataRowWidget("Product Details"),
-                      Divider(thickness: 1),
-                      getProductDataRowWidget("Type",
-                          customWidget: nutritionWidget()),
-                      Divider(thickness: 1),
-                      getProductDataRowWidget(
-                        "Review",
-                        customWidget: ratingWidget(),
-                      ),
-                      Spacer(),
-                      AppButton(
-                        label: "Add To Basket",
-                      ),
-                      Spacer(),
-                    ],
-                  ),
+                            Spacer(),
+                            Text(
+                              "\TND${getTotalPrice().toStringAsFixed(2)}",
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Divider(thickness: 1),
+                    getProductDataRowWidget("Product Details"),
+                    Divider(thickness: 1),
+                    getProductDataRowWidget("Type",
+                        customWidget: nutritionWidget()),
+                    Divider(thickness: 1),
+                    getProductDataRowWidget(
+                      "Review",
+                      customWidget: ratingWidget(),
+                    ),
+                    Spacer(),
+                    AppButton(
+                      label: "Add To Basket",
+                    ),
+                    Spacer(),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

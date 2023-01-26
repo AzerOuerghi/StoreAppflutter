@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  Container(
+                  Container(  
                     height: 105,
                     child: ListView(
                       padding: EdgeInsets.zero,
@@ -175,7 +175,7 @@ class HomeScreen extends StatelessWidget {
           width: 8,
         ),
         Text(
-          "Khartoum,Sudan",
+          "Manouba,Tunisia",
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         )
       ],
