@@ -92,13 +92,16 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _loginOrRegisterButton() {
-    return TextButton(
-      onPressed: () {
-        setState(() {
-          isLogin = !isLogin;
-        });
-      },
-      child: Text(isLogin ? 'Register instead' : 'Login instead'),
+    return Container(
+      margin: EdgeInsets.only(bottom: 30),
+      child: TextButton(
+        onPressed: () {
+          setState(() {
+            isLogin = !isLogin;
+          });
+        },
+        child: Text(isLogin ? 'Register instead' : 'Login instead'),
+      ),
     );
   }
 

@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
-
+import '../../dashboard/dashboard_screen.dart';
 import 'auth.dart';
-import 'home.dart';
 import 'login_register_page.dart';
 
 class WidgetTree extends StatefulWidget {
@@ -19,7 +17,7 @@ class _WidgetTreeState extends State<WidgetTree> {
       stream: Auth().authStateChanges,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return HomePage();
+          return DashboardScreen();
         } else {
           return const LoginPage();
         }

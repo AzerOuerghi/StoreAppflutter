@@ -1,15 +1,36 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/models/product_item.dart';
-import 'package:grocery_app/screens/product_details/product_details_screen.dart';
-import 'package:grocery_app/styles/colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:grocery_app/widgets/item_card_widget.dart';
-import 'package:grocery_app/widgets/search_bar_widget.dart';
 
+import 'package:flutter_svg/flutter_svg.dart';
+
+
+import '../../models/product_item.dart';
+import '../../styles/colors.dart';
+import '../../widgets/item_card_widget.dart';
+import '../../widgets/search_bar_widget.dart';
+import '../login/registre/auth.dart';
+import '../product_details/product_details_screen.dart';
 import 'product_featured_Item_widget.dart';
 import 'home_banner_widget.dart';
 
 class HomeScreen extends StatelessWidget {
+  HomeScreen({Key? key}) : super(key: key);
+
+  final User? user = Auth().currentUser;
+
+  Future<void> signOut() async {
+    await Auth().signOut();
+  }
+
+  Widget _userUid() {
+    return Text(
+      user?.email ?? 'User email',
+      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    );
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  Container(  
+                  Container(
                     height: 105,
                     child: ListView(
                       padding: EdgeInsets.zero,
@@ -165,19 +186,24 @@ class HomeScreen extends StatelessWidget {
 
   Widget locationWidget() {
     String locationIconPath = "assets/icons/location_icon.svg";
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: [
-        SvgPicture.asset(
-          locationIconPath,
+        _userUid(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              locationIconPath, 
+            ),
+            SizedBox(
+              width: 8,
+            ),
+            Text(
+              "Manouba,Tunisia",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            )
+          ],
         ),
-        SizedBox(
-          width: 8,
-        ),
-        Text(
-          "Manouba,Tunisia",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-        )
       ],
     );
   }

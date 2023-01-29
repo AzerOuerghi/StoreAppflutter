@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/common_widgets/app_button.dart';
-import 'package:grocery_app/helpers/column_with_seprator.dart';
-import 'package:grocery_app/models/product_item.dart';
-import 'package:grocery_app/widgets/chart_item_widget.dart';
 
+import '../../common_widgets/app_button.dart';
+import '../../helpers/column_with_seprator.dart';
+import '../../models/product_item.dart';
+import '../../widgets/chart_item_widget.dart';
 import 'checkout_bottom_sheet.dart';
 
 class CartScreen extends StatelessWidget {

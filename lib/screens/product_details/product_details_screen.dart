@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/common_widgets/app_button.dart';
-import 'package:grocery_app/common_widgets/app_text.dart';
-import 'package:grocery_app/models/product_item.dart';
-import 'package:grocery_app/widgets/item_counter_widget.dart';
 
+
+import '../../common_widgets/app_button.dart';
+import '../../common_widgets/app_text.dart';
+import '../../models/product_item.dart';
+import '../../widgets/item_counter_widget.dart';
 import '../filter_screen.dart';
 import 'favourite_toggle_icon_widget.dart';
 

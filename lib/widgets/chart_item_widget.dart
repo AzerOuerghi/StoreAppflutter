@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/common_widgets/app_text.dart';
-import 'package:grocery_app/models/product_item.dart';
-import 'package:grocery_app/styles/colors.dart';
 
+
+import '../common_widgets/app_text.dart';
+import '../models/product_item.dart';
+import '../styles/colors.dart';
 import 'item_counter_widget.dart';
 
 class ChartItemWidget extends StatefulWidget {

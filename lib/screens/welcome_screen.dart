@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/common_widgets/app_button.dart';
-import 'package:grocery_app/common_widgets/app_text.dart';
-import 'package:grocery_app/screens/dashboard/dashboard_screen.dart';
-import 'package:grocery_app/styles/colors.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../common_widgets/app_button.dart';
+import '../common_widgets/app_text.dart';
+import '../styles/colors.dart';
+import 'dashboard/dashboard_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   final String imagePath = "assets/images/welcome_image.jpg";

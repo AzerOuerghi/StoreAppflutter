@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/screens/account/account_screen.dart';
-import 'package:grocery_app/screens/cart/cart_screen.dart';
-import 'package:grocery_app/screens/explore_screen.dart';
-import 'package:grocery_app/screens/home/home_screen.dart';
 
+
+import '../account/account_screen.dart';
+import '../cart/cart_screen.dart';
+import '../explore_screen.dart';
 import '../favourite_screen.dart';
+import '../home/home_screen.dart';
 
 class NavigatorItem {
   final String label;

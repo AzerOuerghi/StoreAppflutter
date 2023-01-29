@@ -1,13 +1,24 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:grocery_app/common_widgets/app_text.dart';
-import 'package:grocery_app/helpers/column_with_seprator.dart';
-import 'package:grocery_app/styles/colors.dart';
 
+
+import '../../common_widgets/app_text.dart';
+import '../../helpers/column_with_seprator.dart';
+import '../../styles/colors.dart';
+import '../login/registre/auth.dart';
 import 'account_item.dart';
 
 class AccountScreen extends StatelessWidget {
+  AccountScreen({Key? key}) : super(key: key);
+
+  final User? user = Auth().currentUser;
+
+  Future<void> signOut() async {
+    await Auth().signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -96,7 +107,7 @@ class AccountScreen extends StatelessWidget {
             Container()
           ],
         ),
-        onPressed: () {},
+        onPressed: signOut,
       ),
     );
   }

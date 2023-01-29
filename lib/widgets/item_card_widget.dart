@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/common_widgets/app_text.dart';
-import 'package:grocery_app/models/product_item.dart';
-import 'package:grocery_app/styles/colors.dart';
+
+import '../common_widgets/app_text.dart';
+import '../models/product_item.dart';
+import '../styles/colors.dart';
+
 
 class GroceryItemCardWidget extends StatelessWidget {
   GroceryItemCardWidget({Key? key, required this.item, this.heroSuffix})

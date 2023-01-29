@@ -1,6 +1,6 @@
+import 'package:EStore_app/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/screens/login/registre/widget_tree.dart';
 
 import 'firebase_options.dart';
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const WidgetTree(),
+      home: SplashScreen(),
     );
   }
 }
