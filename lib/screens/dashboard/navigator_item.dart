@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../account/account_screen.dart';
 import '../cart/cart_screen.dart';
 import '../explore_screen.dart';
