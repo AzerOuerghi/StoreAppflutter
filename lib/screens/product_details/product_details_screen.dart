@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../common_widgets/app_button.dart';
 import '../../common_widgets/app_text.dart';
 import '../../models/product_item.dart';
@@ -76,7 +75,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Column(
+                child: ListView(
                   children: [
                     ListTile(
                       contentPadding: EdgeInsets.zero,
@@ -91,7 +90,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         fontWeight: FontWeight.w600,
                         color: Color(0xff7C7C7C),
                       ),
-                      trailing: FavoriteToggleIcon(),
+                      trailing: FavoriteToggleIcon(widget.groceryItem.name,widget.groceryItem.price),
                     ),
                     Spacer(),
                     Column(

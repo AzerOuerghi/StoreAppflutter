@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 import '../../models/product_item.dart';
 import '../../styles/colors.dart';
 import '../../widgets/item_card_widget.dart';
@@ -28,8 +27,6 @@ class HomeScreen extends StatelessWidget {
       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     );
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -193,7 +190,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              locationIconPath, 
+              locationIconPath,
             ),
             SizedBox(
               width: 8,

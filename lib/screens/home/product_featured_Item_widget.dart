@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../common_widgets/app_text.dart';
 import '../../styles/colors.dart';
 
-
 class GroceryFeaturedItem {
   final String name;
   final String imagePath;

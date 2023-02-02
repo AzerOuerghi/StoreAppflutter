@@ -1,18 +1,79 @@
-import 'package:flutter/cupertino.dart';
 
-import '../common_widgets/app_text.dart';
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class FavouriteScreen extends StatelessWidget {
+
+class FavoritScreen extends StatefulWidget {
+  const FavoritScreen({super.key});
+
+  @override
+  State<FavoritScreen> createState() => _FavoritScreenState();
+}
+
+class _FavoritScreenState extends State<FavoritScreen> {
+
+
+  final CollectionReference _products =
+      FirebaseFirestore.instance.collection('Products');
+
+  Future<void> _delete(String productId) async {
+    await _products.doc(productId).delete();
+
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text('You deleted a product from your favorit list')));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: AppText(
-          text: "No Favorite Items",
-          fontWeight: FontWeight.w600,
-          color: Color(0xFF7C7C7C),
-        ),
+    return Scaffold(
+      body: Column(
+        children: [
+          SizedBox(
+            height: 40,
+          ),
+          Text(
+            "My Favorit",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            child: StreamBuilder(
+              stream: _products.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasData) {
+                  return ListView.builder(
+                    itemCount: streamSnapshot.data!.docs.length,
+                    itemBuilder: (context, index) {
+                      final DocumentSnapshot documentSnapshot =
+                          streamSnapshot.data!.docs[index];
+                      return Card(
+                        margin: const EdgeInsets.all(10),
+                        child: ListTile(
+                          title: Text(documentSnapshot['name']),
+                          subtitle: Text(documentSnapshot['price'].toString()),
+                          trailing: SizedBox( 
+                            width: 100,
+                            child: IconButton(
+                                icon: const Icon(Icons.delete),
+                                onPressed: () => _delete(documentSnapshot.id)),
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                }
+
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              },
+            ),
+          ),
+        ],
       ),
+// Add new product
     );
   }
 }
