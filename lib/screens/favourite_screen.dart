@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 
 class FavoritScreen extends StatefulWidget {
   const FavoritScreen({super.key});
@@ -11,10 +9,8 @@ class FavoritScreen extends StatefulWidget {
 }
 
 class _FavoritScreenState extends State<FavoritScreen> {
-
-
   final CollectionReference _products =
-      FirebaseFirestore.instance.collection('Products');
+      FirebaseFirestore.instance.collection('Fav');
 
   Future<void> _delete(String productId) async {
     await _products.doc(productId).delete();
@@ -53,7 +49,7 @@ class _FavoritScreenState extends State<FavoritScreen> {
                         child: ListTile(
                           title: Text(documentSnapshot['name']),
                           subtitle: Text(documentSnapshot['price'].toString()),
-                          trailing: SizedBox( 
+                          trailing: SizedBox(
                             width: 100,
                             child: IconButton(
                                 icon: const Icon(Icons.delete),

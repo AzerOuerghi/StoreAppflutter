@@ -13,7 +13,7 @@ class FavoriteToggleIcon extends StatefulWidget {
 
 class _FavoriteToggleIconState extends State<FavoriteToggleIcon> {
   final CollectionReference _products =
-      FirebaseFirestore.instance.collection('Products');
+      FirebaseFirestore.instance.collection('Fav');
 
   bool favorite = false;
 
