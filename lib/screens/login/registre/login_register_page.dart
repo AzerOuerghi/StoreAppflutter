@@ -63,14 +63,15 @@ class _LoginPageState extends State<LoginPage> {
   ) {
     return TextField(
       controller: controller,
+      style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
-        fillColor: Colors.white,
-        enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.white, width: 2.0),
-          borderRadius: BorderRadius.circular(25.0),
-        ),
-        labelText: title,
-      ),
+          fillColor: Colors.white,
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.white, width: 2.0),
+            borderRadius: BorderRadius.circular(25.0),
+          ),
+          labelText: title,
+          labelStyle: TextStyle(color: Colors.white)),
     );
   }
 
@@ -166,8 +167,8 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 40,
               ),
-              _entryField('email', _controllerEmail),
-              _entryField('password', _controllerPassword),
+              _entryField('Email', _controllerEmail),
+              _entryField('Password', _controllerPassword),
               _errorMessage(),
               _submitButton(),
               _loginOrRegisterButton(),
