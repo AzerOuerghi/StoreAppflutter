@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../common_widgets/app_text.dart';
 import '../models/product_item.dart';
 import '../styles/colors.dart';
@@ -78,7 +77,7 @@ class _ChartItemWidgetState extends State<ChartItemWidget> {
                 Container(
                   width: 70,
                   child: AppText(
-                    text: "\$${getPrice().toStringAsFixed(2)}",
+                    text: "\TND${getPrice().toStringAsFixed(2)}",
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     textAlign: TextAlign.right,
