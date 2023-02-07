@@ -23,7 +23,7 @@ class SearchBarWidget extends StatelessWidget {
             width: 8,
           ),
           Text(
-            "Rechercher par véhicule ou par marque",
+            "Recherche",
             style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
