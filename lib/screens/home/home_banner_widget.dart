@@ -22,7 +22,7 @@ class HomeBanner extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             child: Image.asset(
-              "assets/images/banner_image.PNG",
+              "assets/images/banner_image.png",
             ),
           ),
           Spacer(),
@@ -30,12 +30,12 @@ class HomeBanner extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AppText(
-                text: "LIVRAISON GRATUITE",
+                text: "LIVRAISON",
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
               ),
               AppText(
-                text: "ET  Up To 40%  OFF",
+                text: "ET Up To 40%",
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
                 color: AppColors.primaryColor,

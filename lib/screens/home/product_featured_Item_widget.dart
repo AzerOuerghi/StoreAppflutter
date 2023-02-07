@@ -11,8 +11,8 @@ class GroceryFeaturedItem {
 }
 
 var groceryFeaturedItems = [
-  GroceryFeaturedItem("Kia", "assets/images/Kia.png"),
-  GroceryFeaturedItem("Peugeot", "assets/images/peugeot.png"),
+  GroceryFeaturedItem("Kia", "assets/images/kia.png"),
+  GroceryFeaturedItem("Peug", "assets/images/peugeot.png"),
 ];
 
 class GroceryFeaturedCard extends StatelessWidget {
